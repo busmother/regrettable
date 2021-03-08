@@ -1,0 +1,2 @@
+class ApologiesController < ApplicationController
+end

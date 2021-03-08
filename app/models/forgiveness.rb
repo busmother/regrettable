@@ -1,0 +1,2 @@
+class Forgiveness < ApplicationRecord
+end
