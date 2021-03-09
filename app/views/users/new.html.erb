@@ -1,0 +1,16 @@
+<h3>This is the signup page</h3>
+
+<%= form_for(@user) do |f| %>
+    <div class="field">
+        <%= f.label :name, 'Name'%><br>
+        <%= f.text_field :name %><br>
+        <%= f.label :email, 'Email'%><br>
+        <%= f.text_field :email %><br>
+        <%= f.label :password, 'Password'%><br>
+        <%= f.text_field :password %><br>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<%end%>
