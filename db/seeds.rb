@@ -1,7 +1,39 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create(username: "Andrew Cuomo", email: "a.cuomo@gmail.com", password: "password")
+User.create(username: "Justin Timberlake", email: "j.timberlake@yahoo.com", password: "password")
+User.create(username: "Taylor Swift", email: "swifty@me.com", password: "password")
+User.create(username: "Sarah Huckabee Sanders", email: "sarah.huck@applebees.com", password: "password")
+User.create(username: "Justin Bieber", email: "swifty@me.com", password: "password")
+User.create(username: "Chance the Rapper", email: "chance@me.com", password: "password")
+User.create(username: "Jeff Bezos", email: "jeff@amazon.com", password: "password")
+User.create(username: "Wendy Williams", email: "wendy@wendy.com", password: "password")
+User.create(username: "Terry Crews", email: "therealterrycrews@yahoo.com", password: "password")
+User.create(username: "John Mulaney", email: "m.john@me.com", password: "password")
+User.create(username: "Bob Iger", email: "b.iger@disney.com", password: "password")
+User.create(username: "Snoop Dogg", email: "d_oh_double_g@me.com", password: "password")
+User.create(username: "Victoria Fuller", email: "fuller_v@gmail.com", password: "password")
+User.create(username: "Scheana Shay", email: "s.shay.away@yahoo.com", password: "password")
+User.create(username: "Sherry Pie", email: "m.john@me.com", password: "password")
+User.create(username: "Corey Feldman", email: "felderman.c@gmail.com", password: "password")
+User.create(username: "Vanessa Hudgens", email: "m.john@me.com", password: "password")
+User.create(username: "Evangeline Lilly", email: "lillyevangeline@yahoo.com", password: "password")
+User.create(username: "Tyra Banks", email: "tyrathebank@gmail.com", password: "password")
+User.create(username: "Jimmy Kimmel", email: "jimmy@tonightshow.com", password: "password")
+User.create(username: "Alison Roman", email: "a.roman@nyt.com", password: "password")
+User.create(username: "Bryan Adams", email: "bryan.adams@gmail.com", password: "password")
+User.create(username: "Hannah Brown", email: "hannah_brown@me.com", password: "password")
+User.create(username: "Chase Stokes", email: "chasewhatmatters@yahoo.com", password: "password")
+User.create(username: "Lana Del Rey", email: "videogames@gmail.com", password: "password")
+User.create(username: "Doja Cat", email: "bitchboss@me.com", password: "password")
+User.create(username: "Jimmy Fallon", email: "jimmy@thetonightshow.com", password: "password")
+User.create(username: "Karol G", email: "g.karol@yahoo.com", password: "password")
+User.create(username: "Lea Michele", email: "leaismea@me.com", password: "password")
+User.create(username: "Rachel Griffiths", email: "m.john@me.com", password: "password")
+
+
+Incident.create(name: "R. Kelly Abuse", description: "description here")
+Incident.create(name: "Calling Joaquin Phoenix 'oddly attractive'", description: "description here")
+Incident.create(name: "JFL42", description: "Canceling appearance at the JFL42 festival in Toronto")
+
+Apology.create(body: , user_id: , incident_id: )
+
+Forgiveness.create(user_id: , apology_id: )
