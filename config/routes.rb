@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # root to: "apologies#index"
 
   get '/signup' => 'users#new'
+  # get 'users/sign_out' => 'devise/sessions#destroy'
+  # @request.env["devise.mapping"] = Devise.mappings[:user]
   
 
 
