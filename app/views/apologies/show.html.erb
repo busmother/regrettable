@@ -1,0 +1,3 @@
+<b><%= @apology.user.name%></b> apologises for <b><%= @apology.incident.name%>:</b><br><br>
+<%= @apology.body%><br><br>
+<em><%= @apology.forgivenesses.first.user.name%> and <%=@apology.forgivenesses.count-1%> others forgive this.</em>
