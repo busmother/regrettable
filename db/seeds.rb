@@ -1,46 +1,46 @@
-User.create(username: "Andrew Cuomo", email: "a.cuomo@gmail.com", password: "password") #1
-User.create(username: "Justin Timberlake", email: "j.timberlake@yahoo.com", password: "password") #2
-User.create(username: "Taylor Swift", email: "swifty@me.com", password: "password") #3
-User.create(username: "Sarah Huckabee Sanders", email: "sarah.huck@applebees.com", password: "password") #4
-User.create(username: "Justin Bieber", email: "swifty@me.com", password: "password") #5
-User.create(username: "Chance the Rapper", email: "chance@me.com", password: "password") #6
-User.create(username: "Jeff Bezos", email: "jeff@amazon.com", password: "password") #7
-User.create(username: "Wendy Williams", email: "wendy@wendy.com", password: "password") #8
-User.create(username: "Terry Crews", email: "therealterrycrews@yahoo.com", password: "password") #9
-User.create(username: "John Mulaney", email: "m.john@me.com", password: "password") #10
-User.create(username: "Bob Iger", email: "b.iger@disney.com", password: "password") #11
-User.create(username: "Snoop Dogg", email: "d_oh_double_g@me.com", password: "password") #12
-User.create(username: "Victoria Fuller", email: "fuller_v@gmail.com", password: "password") #13
-User.create(username: "Scheana Shay", email: "s.shay.away@yahoo.com", password: "password") #14
-User.create(username: "Sherry Pie", email: "m.john@me.com", password: "password") #15
-User.create(username: "Corey Feldman", email: "felderman.c@gmail.com", password: "password") #16
-User.create(username: "Vanessa Hudgens", email: "m.john@me.com", password: "password") #17
-User.create(username: "Evangeline Lilly", email: "lillyevangeline@yahoo.com", password: "password") #18
-User.create(username: "Tyra Banks", email: "tyrathebank@gmail.com", password: "password") #19
-User.create(username: "Jimmy Kimmel", email: "jimmy@tonightshow.com", password: "password") #20
-User.create(username: "Alison Roman", email: "a.roman@nyt.com", password: "password") #21
-User.create(username: "Bryan Adams", email: "bryan.adams@gmail.com", password: "password") #22
-User.create(username: "Hannah Brown", email: "hannah_brown@me.com", password: "password") #23
-User.create(username: "Doja Cat", email: "bitchboss@me.com", password: "password") #24
-User.create(username: "Jimmy Fallon", email: "jimmy@thetonightshow.com", password: "password") #25
-User.create(username: "Karol G", email: "g.karol@yahoo.com", password: "password") #26
-User.create(username: "Lea Michele", email: "leaismea@me.com", password: "password") #27
-User.create(username: "Rachel Griffiths", email: "m.john@me.com", password: "password") #28
-User.create(username: "Abby Lee Miller", email: "dancemom23@me.com", password: "password") #29
-User.create(username: "Roberto Aguirre- Sacasa", email: "ras@riverdaleshow.com", password: "password") #30
-User.create(username: "Alia Shawkat", email: "a.shawkat@arresteddevelopment.com", password: "password") #31
-User.create(username: "Dee Nguyen", email: "dee@thechallenge.com", password: "password") #32
-User.create(username: "Spike Lee", email: "spikeleejoint@gmail.com", password: "password") #33
-User.create(username: "Catherine Cohen", email: "ccthecomedian@yahoo.com", password: "password") #34
-User.create(username: "Josh Thomas", email: "joshthomas87@gmail.com", password: "password") #35
-User.create(username: "Megan Amram", email: "meg@thegoodplace.com", password: "password") #36
-User.create(username: "Noname", email: "nonametherapper@me.com", password: "password") #37
-User.create(username: "Florence Pugh", email: "florenceandthepugh@gmail.com", password: "password") #38
-User.create(username: "David Byrne", email: "thismustbetheemail@yahoo.com", password: "password") #39
-User.create(username: "Rihanna", email: "desperad0@me.com", password: "password") #40
-User.create(username: "Morgan Wallen", email: "morgan.w.1988@gmail.com", password: "password") #41
-User.create(username: "Anne Hathaway", email: "anne.hathaway@me.com", password: "password") #42
-User.create(username: "Lady Gaga", email: "thefameemail@yahoo.com", password: "password") #43
+User.create(name: "Andrew Cuomo", email: "a.cuomo@gmail.com", password: "password") #1
+User.create(name: "Justin Timberlake", email: "j.timberlake@yahoo.com", password: "password") #2
+User.create(name: "Taylor Swift", email: "swifty@me.com", password: "password") #3
+User.create(name: "Sarah Huckabee Sanders", email: "sarah.huck@applebees.com", password: "password") #4
+User.create(name: "Justin Bieber", email: "swifty@me.com", password: "password") #5
+User.create(name: "Chance the Rapper", email: "chance@me.com", password: "password") #6
+User.create(name: "Jeff Bezos", email: "jeff@amazon.com", password: "password") #7
+User.create(name: "Wendy Williams", email: "wendy@wendy.com", password: "password") #8
+User.create(name: "Terry Crews", email: "therealterrycrews@yahoo.com", password: "password") #9
+User.create(name: "John Mulaney", email: "m.john@me.com", password: "password") #10
+User.create(name: "Bob Iger", email: "b.iger@disney.com", password: "password") #11
+User.create(name: "Snoop Dogg", email: "d_oh_double_g@me.com", password: "password") #12
+User.create(name: "Victoria Fuller", email: "fuller_v@gmail.com", password: "password") #13
+User.create(name: "Scheana Shay", email: "s.shay.away@yahoo.com", password: "password") #14
+User.create(name: "Sherry Pie", email: "m.john@me.com", password: "password") #15
+User.create(name: "Corey Feldman", email: "felderman.c@gmail.com", password: "password") #16
+User.create(name: "Vanessa Hudgens", email: "m.john@me.com", password: "password") #17
+User.create(name: "Evangeline Lilly", email: "lillyevangeline@yahoo.com", password: "password") #18
+User.create(name: "Tyra Banks", email: "tyrathebank@gmail.com", password: "password") #19
+User.create(name: "Jimmy Kimmel", email: "jimmy@tonightshow.com", password: "password") #20
+User.create(name: "Alison Roman", email: "a.roman@nyt.com", password: "password") #21
+User.create(name: "Bryan Adams", email: "bryan.adams@gmail.com", password: "password") #22
+User.create(name: "Hannah Brown", email: "hannah_brown@me.com", password: "password") #23
+User.create(name: "Doja Cat", email: "bitchboss@me.com", password: "password") #24
+User.create(name: "Jimmy Fallon", email: "jimmy@thetonightshow.com", password: "password") #25
+User.create(name: "Karol G", email: "g.karol@yahoo.com", password: "password") #26
+User.create(name: "Lea Michele", email: "leaismea@me.com", password: "password") #27
+User.create(name: "Rachel Griffiths", email: "m.john@me.com", password: "password") #28
+User.create(name: "Abby Lee Miller", email: "dancemom23@me.com", password: "password") #29
+User.create(name: "Roberto Aguirre- Sacasa", email: "ras@riverdaleshow.com", password: "password") #30
+User.create(name: "Alia Shawkat", email: "a.shawkat@arresteddevelopment.com", password: "password") #31
+User.create(name: "Dee Nguyen", email: "dee@thechallenge.com", password: "password") #32
+User.create(name: "Spike Lee", email: "spikeleejoint@gmail.com", password: "password") #33
+User.create(name: "Catherine Cohen", email: "ccthecomedian@yahoo.com", password: "password") #34
+User.create(name: "Josh Thomas", email: "joshthomas87@gmail.com", password: "password") #35
+User.create(name: "Megan Amram", email: "meg@thegoodplace.com", password: "password") #36
+User.create(name: "Noname", email: "nonametherapper@me.com", password: "password") #37
+User.create(name: "Florence Pugh", email: "florenceandthepugh@gmail.com", password: "password") #38
+User.create(name: "David Byrne", email: "thismustbetheemail@yahoo.com", password: "password") #39
+User.create(name: "Rihanna", email: "desperad0@me.com", password: "password") #40
+User.create(name: "Morgan Wallen", email: "morgan.w.1988@gmail.com", password: "password") #41
+User.create(name: "Anne Hathaway", email: "anne.hathaway@me.com", password: "password") #42
+User.create(name: "Lady Gaga", email: "thefameemail@yahoo.com", password: "password") #43
 
 Incident.create(name: "R. Kelly Abuse") #1
 Incident.create(name: "Calling Joaquin Phoenix 'oddly attractive'") #2
@@ -72,9 +72,9 @@ Incident.create(name: "The pain caused to people with limb differences") #27
 Incident.create(name: "Flirting with a woman that isn't my wife") #28
 
 Apology.create(body: ".@Bighill44 We’re thinking about Beau today as he is in surgery. I want to apologize to the cleft community and in Beau’s honor, our show is donating to @operationsmile and @AmerCleftPalate and encourage our Wendy Watchers to learn more and help support the cleft community.", user_id: 8, incident_id: 2)
-Apology.create(body: "I told @KevinHart4real a while ago, he needed 2 “acknowledge the pain of other people.” Right now I have to do the same thing. I want to apologize for the comments I made. I realize there are a lot of Black women hurt and let down by what I said and also by what I didn’t say. I hear you, I respect you and understand you. I am sorry and I am here to support you.  I spoke from my own personal point of view without first taking into consideration someone else’s experience. I allowed disrespectful comments directed at me and my family to cause me to react angrily instead of responding thoughtfully. This certainly caused more harm, and it is my hope that I can amend any pain I have caused to those who were hurt by my words. @itsgabrielleu, I want you to know it was never my intention to invalidate your experience— but that is what I did. I apologize. You have been through a lot in this business, and with that I empathize with the struggle toward fairness and equality in the workplace.", user_id: 9, incicent_id: 4)
-Apology.create(body: "The murder of George Floyd has forced me to search my heart to find out what more I can do, as a human being, as a citizen, and more specifically as a Black man, to ensure our community can not only survive but thrive in this new world. Whites have always had privilege in a society that has systemic racism built in, a fact that has been proven over and over again  with the senseless deaths of unarmed Black men and women— with no one being held accountable. But I also see that I am privileged as man, in a society that also has sexism built in. This privilege carries over into my community as a Black man in relationship with Black women. It is in this light I want to make further amends with Black women, and in particular @itsgabrielleu for not recognizing the privilege I have - especially in the workplace- and adding this fact to my earlier apology. If we are to move forward as a people we must do the work required to heal the relationships in our community first.  To whom much is given, much is required. I have a huge responsibility —and I vow to honor it.", user_id: 9, incicent_id: 4)
-Apology.create(body: "This will be my 3rd public apology to Gabrielle Union. If a 4th is needed, I will continue to apologize and push for reconciliation between the world, and more importantly, the culture I grew up in. I'm sorry, @itsgabrielleu #reconciliation", user_id: 9, incicent_id: 4)
+Apology.create(body: "I told @KevinHart4real a while ago, he needed 2 “acknowledge the pain of other people.” Right now I have to do the same thing. I want to apologize for the comments I made. I realize there are a lot of Black women hurt and let down by what I said and also by what I didn’t say. I hear you, I respect you and understand you. I am sorry and I am here to support you.  I spoke from my own personal point of view without first taking into consideration someone else’s experience. I allowed disrespectful comments directed at me and my family to cause me to react angrily instead of responding thoughtfully. This certainly caused more harm, and it is my hope that I can amend any pain I have caused to those who were hurt by my words. @itsgabrielleu, I want you to know it was never my intention to invalidate your experience— but that is what I did. I apologize. You have been through a lot in this business, and with that I empathize with the struggle toward fairness and equality in the workplace.", user_id: 9, incident_id: 4)
+Apology.create(body: "The murder of George Floyd has forced me to search my heart to find out what more I can do, as a human being, as a citizen, and more specifically as a Black man, to ensure our community can not only survive but thrive in this new world. Whites have always had privilege in a society that has systemic racism built in, a fact that has been proven over and over again  with the senseless deaths of unarmed Black men and women— with no one being held accountable. But I also see that I am privileged as man, in a society that also has sexism built in. This privilege carries over into my community as a Black man in relationship with Black women. It is in this light I want to make further amends with Black women, and in particular @itsgabrielleu for not recognizing the privilege I have - especially in the workplace- and adding this fact to my earlier apology. If we are to move forward as a people we must do the work required to heal the relationships in our community first.  To whom much is given, much is required. I have a huge responsibility —and I vow to honor it.", user_id: 9, incident_id: 4)
+Apology.create(body: "This will be my 3rd public apology to Gabrielle Union. If a 4th is needed, I will continue to apologize and push for reconciliation between the world, and more importantly, the culture I grew up in. I'm sorry, @itsgabrielleu #reconciliation", user_id: 9, incident_id: 4)
 Apology.create(body: "Please read and understand I am terribly sorry to move the show again. It is now rescheduled for April 10 and I will be there no matter what. I love you Toronto I hope you know that I won’t let you down again. Also I’m afraid of Lorne so I do what he says.", user_id: 10, incident_id: 3)
 Apology.create(body: "Our company @WaltDisneyCo apologizes to the Emerson Elementary School PTA and I will personally donate to their fund raising initiative.", user_id: 11, incident_id: 5)
 Apology.create(body: "Top of the morning! Big Snoop Dogg coming at you live and direct with a message. Two wrongs don't make no right. When you're wrong, you gotta fix it. So with that being said: Gayle King, I publicly tore you down by coming at you in a derogatory manner based off of emotions... me being agnry at questions that you asked. Umm, overreacted. Should have handled it way different than that. I was raised way better than that. So I would like to apologize to you publicly for the language that I used and calling you out of your name and just being disrespectful. I didn't mean for it to be like that. I was just expressing myself for a friend that wasn't here to defend himself. A lot of people look up to me and they love me and they appreciate me, so I want to let them konw that anytime you mess up, it's okay to fix it, it's okay to man up and say that you're wrong. I apologize. Hopefully we can sit down and talk privately. Have a good day.", user_id: 12, incident_id: 6)
