@@ -1,8 +1,8 @@
-This is a user show page for <%=@user.name%>
+<%=@user.name%>'s regrets:
 
 <ul>
 <%= @user.apologies.each do |a| %>
-    <li> <%=a.incident.name%>
+    <li> <%=link_to a.incident.name, a.incident%>
     <br>
     <%=a.body%>
     </li>
