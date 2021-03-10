@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # get 'home/index'
-  resources :forgivenesses
+  # resources :forgivenesses
   resources :apologies
   resources :incidents
   # resources :users
