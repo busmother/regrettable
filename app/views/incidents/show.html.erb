@@ -1,1 +1,18 @@
 This is the incident show page
+<br>
+<br>
+<%= @incident.name%>
+<br>
+<br>
+<%if @incident.apologies.count > 3%>
+    <em><%= link_to @incident.apologies.first.users.first.name, @apology_path%> and <%=@incident.apologies.users.count-1%> others forgive this.</em>
+<%elsif @incident.apologies.count == 2 %>
+    <em><%= link_to @incident.apologies.first.users.first.name, @apology_path%> and 1 other forgive this.</em>
+<%elsif @incident.apologies.count == 1%>
+    <em><%= link_to @incident.apologies.first.users.first.name, @apology_path%> forgives this.</em>
+<%else%>
+    <em>No one has apologized for this yet - will you be the first?</em>
+<%end%>
+<br>
+<br>
+[apology partial here]

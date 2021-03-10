@@ -1,11 +1,9 @@
 class ApologiesController < ApplicationController
     before_action :authenticate_user!
-    # def index
-
-    # end
 
     def show
         @apology = Apology.find_by(id: params[:id])
+        @apology_user = @apology.user
     end
 
     def forgive
