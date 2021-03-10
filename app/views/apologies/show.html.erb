@@ -1,3 +1,18 @@
-<b><%= @apology.user.name%></b> apologises for <b><%= @apology.incident.name%>:</b><br><br>
+<b><%=link_to @apology.user.name, @user_path%></b> apologises for <b><%= link_to @apology.incident.name, @incident_path%>:</b><br><br>
 <%= @apology.body%><br><br>
-<em><%= @apology.forgivenesses.first.user.name%> and <%=@apology.forgivenesses.count-1%> others forgive this.</em>
+<%if @apology.forgivenesses.include?(current_user)%>
+<%="You forgive this"%>
+<%else%>
+<%="[forgive button]"%>
+
+<%end%>
+
+<%if @apology.forgivenesses.count > 3%>
+<em><%= link_to @apology.forgivenesses.first.user.name, @user_path%> and <%=@apology.forgivenesses.count-1%> others forgive this.</em>
+<%elsif @apology.forgivenesses.count == 2 %>
+<em><%= link_to @apology.forgivenesses.first.user.name, @user_path%> and 1 other forgive this.</em>
+<%elsif @apology.forgivenesses.count == 1%>
+<em><%= link_to @apology.forgivenesses.first.user.name, @user_path%> forgives this.</em>
+<%else%>
+<em>No one forgives this yet - will you be the first?</em>
+<%end%>
