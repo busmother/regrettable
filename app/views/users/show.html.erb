@@ -1,1 +1,10 @@
 This is a user show page for <%=@user.name%>
+
+<ul>
+<%= @user.apologies.each do |a| %>
+    <li> <%=a.incident.name%>
+    <br>
+    <%=a.body%>
+    </li>
+<%end%>
+</ul>

@@ -1,4 +1,4 @@
-<b> <%=link_to @apology_user.name, @user_path%> </b> apologises for <b> <%=link_to @apology.incident.name, @apology.incident%> </b> 
+<b> <%=link_to @apology_user.name, @apology_user%> </b> apologises for <b> <%=link_to @apology.incident.name, @apology.incident%> </b> 
 <br>
 <br>
 <%= @apology.body%>
@@ -7,6 +7,7 @@
 
 <% if @apology.forgiven?(current_user) %>
     <%= button_to "Forgiven", forgiveness_path(@apology), method: "put", disabled: true %>
+    <%# <%= button_to "Unforgive", forgiveness_path(@apology), method: "delete" %>
 <% else %>
     <%= button_to "Forgive", forgiveness_path(@apology), method: "put" %>
 <% end %>
