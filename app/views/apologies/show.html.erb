@@ -1,4 +1,4 @@
-<b><%=link_to @apology.user.name, @user_path%></b> apologises for <b><%= link_to @apology.incident.name, @incident_path%>:</b><br><br>
+<b><%=link_to @apology.user.name, @user_path%></b> apologises for <b><%=link_to @apology.incident.name, @apology.incident%></b><br><br>
 <%= @apology.body%><br><br>
 
 <% if user_signed_in? %>
