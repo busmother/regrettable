@@ -4,17 +4,20 @@ This is the incident show page
 <%= @incident.name%>
 <br>
 <br>
-
-<br>
-<br>
-<%if @incident.apologies.count > 3%>
-    <em><%= link_to @incident.apologies.first.users.first.name, @apology_path%> and <%=@incident.apologies.users.count-1%> others apologize for this.</em>
-<%elsif @incident.apologies.count == 2 %>
-    <em><%= link_to @incident.apologies.first.users.first.name, @apology_path%> and 1 other apologize for this.</em>
-<%elsif @incident.apologies.count == 1%>
-    <em><%= link_to @incident.apologies.first.users.first.name, @apology_path%> apologizes for this.</em>
-<%else%>
-    <em>No one has apologized for this yet - will you be the first?</em>
+<% if @incident.apologized?(current_user) && @incident.apologies.count > 2%>
+    <em>You, <%link_to @incident.apologies.first.users.first.name, @user_path%> and <%=@incident.apologies.users.count-2%> others apologize for this:</em>
+<% elsif @incident.apologized?(current_user) && @incident.apologies.count == 2 %>
+    <em>You and <%link_to @incident.apologies.first.users.first.name, @user_path%> apologize for this:</em>
+<% elsif @incident.apologized?(current_user) && @incident.apologies.count == 1 %>
+    <em>You apologize for this:</em>
+<% elsif !@incident.apologized?(current_user) && @incident.apologies.count > 3%>
+    <em><%= link_to @incident.apologies.first.users.first.name, @user_path%> and <%=@incident.apologies.users.count-1%> others apologize for this.</em>
+<% elsif !@incident.apologized?(current_user) && @incident.apologies.count == 2%>
+    <em><%= link_to @incident.apologies.first.users.first.name, @user_path %> and <%= @incident.apologies.last.users.last.name%> apologize for this.</em>
+<% elsif !@incident.apologized?(current_user) && @incident.apologies.count == 1%>
+    <em><%= link_to @incident.apologies.first.users.first.name, @user_path %> apologizes for this.</em>
+<% else %>
+    <em>No one has apologized for this. Will you be first?.</em>
 <%end%>
 <br>
 <br>

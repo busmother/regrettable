@@ -4,13 +4,13 @@
 <%= @apology.body%>
 <br>
 <br>
-<% if user_signed_in? %>
-    <% if @apology.forgiven?(current_user) %>
-        <%= button_to "Forgiven", forgiveness_path(@apology), method: "put", disabled: true %>
-    <% else %>
-        <%= button_to "Forgive", forgiveness_path(@apology), method: "put" %>
-    <% end %>
+
+<% if @apology.forgiven?(current_user) %>
+    <%= button_to "Forgiven", forgiveness_path(@apology), method: "put", disabled: true %>
+<% else %>
+    <%= button_to "Forgive", forgiveness_path(@apology), method: "put" %>
 <% end %>
+
 
 <%if @apology.forgivenesses.count > 3%>
     <em><%= link_to @apology.forgivenesses.first.user.name, @user_path%> and <%=@apology.forgivenesses.count-1%> others forgive this.</em>
