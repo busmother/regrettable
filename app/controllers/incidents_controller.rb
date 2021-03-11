@@ -11,11 +11,9 @@ class IncidentsController < ApplicationController
     end
 
     def create
-        # byebug
         @incident = Incident.create!(incident_params)
         @apology = @incident.apologies.last
-        @apology.save
-        redirect_to incident_path(@incident)
+        redirect_to apology_path(@apology)
     end
 
     private
@@ -24,7 +22,9 @@ class IncidentsController < ApplicationController
         params.require(:incident).permit(
             :name,
             apologies_attributes: [
-                :body
+                :body,
+                :user_id,
+                :incident_id
             ]
         )
     end
