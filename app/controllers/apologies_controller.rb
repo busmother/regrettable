@@ -2,7 +2,7 @@ class ApologiesController < ApplicationController
     before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
 
     def show
-        @apology = Apology.find_by(id: params[:id])
+        @apology = Apology.find(params[:id])
         @apology_user = @apology.user
     end
 
