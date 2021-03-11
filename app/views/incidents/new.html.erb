@@ -1,0 +1,11 @@
+<%= form_for @incident do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.fields_for :apologies do |a| %>
+        <%= a.label :body %>
+        <%= a.text_field :body %>
+    <% end %>
+
+    <% f.submit "Apologize" %>
+<% end %>
