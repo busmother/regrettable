@@ -2,4 +2,6 @@ So sorry to tell you this, but we're not sure where this record is.
 <br><br>
 We're learning, listening, and growing ;(
 <br><br>
+<% if current_user != nil%>
 <%=link_to "Go home", user_path(current_user)%>
+<% end %>
