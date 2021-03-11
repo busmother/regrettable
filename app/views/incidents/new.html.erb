@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <%= form_for @incident do |f| %>
     <%= f.label "Incident" %>
     <%= f.text_field :name %>
@@ -6,6 +8,8 @@
         <%= a.label "Apology" %>
         <%= a.text_field :body %>
     <% end %>
+<br><br>
+    <%= f.submit "Apologize" %>
+<% end %>
 
-    <% f.submit "Apologize" %>
 <% end %>
