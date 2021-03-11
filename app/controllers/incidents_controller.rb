@@ -4,4 +4,10 @@ class IncidentsController < ApplicationController
     def show
         @incident = Incident.find_by(id: params[:id])
     end
+
+    def new
+        @incident = Incident.new
+        @incident.apologies.build(:apology_type: 'your apology')
+    end
+
 end
