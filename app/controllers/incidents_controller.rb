@@ -14,7 +14,6 @@ class IncidentsController < ApplicationController
         # byebug
         @incident = Incident.create!(incident_params)
         @apology = @incident.apologies.last
-        @apology.user_id = current_user.id
         @apology.save
         redirect_to incident_path(@incident)
     end
