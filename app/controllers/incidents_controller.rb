@@ -10,4 +10,14 @@ class IncidentsController < ApplicationController
         @incident.apologies.build(:apology_type: 'your apology')
     end
 
+    private
+
+    def incident_params
+        params.require(:incident).permit(
+            :name,
+            :apologies_attributes: [
+                :body
+            ]
+        )
+    end
 end
