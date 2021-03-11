@@ -2,7 +2,7 @@ class IncidentsController < ApplicationController
     before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
 
     def show
-        @incident = Incident.find_by(id: params[:id])
+        @incident = Incident.find(params[:id])
     end
 
     def new
