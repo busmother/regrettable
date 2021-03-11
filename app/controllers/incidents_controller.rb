@@ -1,5 +1,5 @@
 class IncidentsController < ApplicationController
-    before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+    # before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
     def show
         @incident = Incident.find(params[:id])
@@ -11,9 +11,10 @@ class IncidentsController < ApplicationController
     end
 
     def create
+        # byebug
         @incident = Incident.create!(incident_params)
         @apology = @incident.apologies.last
-        @apology.user = current_user
+        @apology.user_id = current_user.id
         @apology.save
         redirect_to incident_path(@incident)
     end

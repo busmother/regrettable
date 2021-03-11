@@ -2,16 +2,20 @@ Rails.application.routes.draw do
   resources :apologies
   resources :incidents
   resources :users
-  devise_for :users
+  # devise_for :users
 
   root to: "home#index"
-  # root "home#index"
 
-  # get '/signup' => 'users#new'
-  
-  # devise_scope :user do #what does this do? anything?
-  #   get 'sign_in', to: 'devise/sessions#new'
-  # end
+  get '/signup' => 'users#new'
+
+
+  devise_for :users, skip: [:sessions] #if you turn this on and turn devise_for :users off, you can at least get sign in
+  as :user do
+    # get 'signup', to: 'devise/users#new', as: :new_user #experimental
+    get 'signin', to: 'devise/sessions#new', as: :new_user_session
+    post 'signin', to: 'devise/sessions#create', as: :user_session
+    delete 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
 
   #here we're sending a put request with the id of the apology we want to forgive and we are calling our forgive method in our controller
   put '/apology/:id/forgiveness', to: 'apologies#forgive', as: 'forgiveness'
