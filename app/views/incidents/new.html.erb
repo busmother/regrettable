@@ -1,12 +1,13 @@
 <% if user_signed_in? %>
 
 <%= form_for @incident do |f| %>
+<%# <%= form_tag incidents_path do |f| %>
     <%= f.label "Incident" %>
     <%= f.text_field :name %>
 <br><br>
     <%= f.fields_for :apologies do |a| %>
         <%= a.label "Apology" %>
-        <%= a.text_field :body %>
+        <%= a.text_area :body %>
         <%= a.hidden_field :user_id, value: current_user.id %>
     <% end %>
 <br><br>
