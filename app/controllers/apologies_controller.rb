@@ -7,10 +7,21 @@ class ApologiesController < ApplicationController
     end
 
     def forgive
+        # byebug
         @apology = Apology.all.find(params[:id])
-        Forgiveness.create(user_id: current_user.id, apology_id: @apology.id)
+        if @apology.forgiven?(current_user)
+            @apology.forgivenesses.find{|forgiveness| forgiveness.user_id == current_user.id}.destroy
+        else
+            Forgiveness.create(user_id: current_user.id, apology_id: @apology.id)
+        end
         redirect_to apology_path(@apology)
     end
+
+    # def forgive #original
+    #     @apology = Apology.all.find(params[:id])
+    #     Forgiveness.create(user_id: current_user.id, apology_id: @apology.id)
+    #     redirect_to apology_path(@apology)
+    # end
 
 end
 

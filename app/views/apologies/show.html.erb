@@ -19,10 +19,10 @@
      <em><%= link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user.name%> and <%=@apology.forgivenesses.users.count-1%> others forgive this.</em>
 
 <% elsif !@apology.forgiven?(current_user) && @apology.forgivenesses.count == 2%>
-    <em><%= link_to @apology.forgivenesses.first.user.name.name, @apology.forgivenesses.first.user.name %> and <%= link_to @apology.forgivenesses.last.user.name, @user_path%> forgive this.</em>
+    <em><%= link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user.name %> and <%= link_to @apology.forgivenesses.last.user.name, @user_path%> forgive this.</em>
 
 <% elsif !@apology.forgiven?(current_user) && @apology.forgivenesses.count == 1%>
-    <em><%= link_to @apology.forgivenesses.first.user.name.name, @apology.forgivenesses.first.user.name %> forgives this.</em>
+    <em><%= link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user.name %> forgives this.</em>
 
 <% else %>
     <em>No one forgives this yet - will you be the first?</em>

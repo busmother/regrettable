@@ -9,7 +9,7 @@
 <% elsif @incident.apologized?(current_user) && @incident.apologies.count == 1 %>
     <em><%link_to current_user.name, current_user%> apologize for this:</em>
 <% elsif !@incident.apologized?(current_user) && @incident.apologies.count > 3%>
-    <em><%= link_to @incident.apologies.first.users.first.name, @incident.apologies.first.users.first%> and <%=@incident.apologies.users.count-1%> others apologize for this.</em>
+    <em><%= link_to @incident.apologies.first.users.first.name, @incident.apologies.first.users.first%> and <%=@incident.apologies.count-1%> others apologize for this.</em>
 <% elsif !@incident.apologized?(current_user) && @incident.apologies.count == 2%>
     <em><%= link_to @incident.apologies.first.users.first.name, @incident.apologies.first.users.first %> and <%= link_to @incident.apologies.last.users.last.name, @incident.apologies.last.users.last%> apologize for this.</em>
 <% elsif !@incident.apologized?(current_user) && @incident.apologies.count == 1%>
