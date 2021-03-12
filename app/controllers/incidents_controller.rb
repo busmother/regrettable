@@ -6,6 +6,7 @@ class IncidentsController < ApplicationController
     end
 
     def new
+        @incidents = Incident.all
         @incident = Incident.new
         @incident.apologies.build
     end
