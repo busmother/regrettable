@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :apologies
   resources :incidents
-  # resources :users
+  resources :users, only: [:show]
   # devise_for :users
 
   root to: "home#index"
