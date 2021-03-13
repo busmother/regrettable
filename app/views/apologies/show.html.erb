@@ -6,22 +6,22 @@
 <br>
 
 
-<% if @apology.forgiven?(current_user) && @apology.forgivenesses.count > 2%>
+<% if @apology.forgiven?(current_user) && @apology.forgives_count > 2%>
     <em><%= link_to "You", current_user%>, <%link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user%> and <%=@apology.forgivenesses.count-2%> others forgive this:</em>
 
-<% elsif @apology.forgiven?(current_user) && @apology.forgivenesses.count == 2 %>
+<% elsif @apology.forgiven?(current_user) && @apology.forgives_count == 2 %>
     <em><%= link_to "You", current_user%> and <%link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user%> forgive this:</em>
 
-<% elsif @apology.forgiven?(current_user) && @apology.forgivenesses.count == 1 %>
+<% elsif @apology.forgiven?(current_user) && @apology.forgives_count == 1 %>
     <em><%= link_to "You", current_user%> apologize for this:</em>
 
-<% elsif !@apology.forgiven?(current_user) && @apology.forgivenesses.count > 3%>
+<% elsif !@apology.forgiven?(current_user) && @apology.forgives_count > 3%>
      <em><%= link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user.name%> and <%=@apology.forgivenesses.users.count-1%> others forgive this.</em>
 
-<% elsif !@apology.forgiven?(current_user) && @apology.forgivenesses.count == 2%>
+<% elsif !@apology.forgiven?(current_user) && @apology.forgives_count == 2%>
     <em><%= link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user.name %> and <%= link_to @apology.forgivenesses.last.user.name, @user_path%> forgive this.</em>
 
-<% elsif !@apology.forgiven?(current_user) && @apology.forgivenesses.count == 1%>
+<% elsif !@apology.forgiven?(current_user) && @apology.forgives_count == 1%>
     <em><%= link_to @apology.forgivenesses.first.user.name, @apology.forgivenesses.first.user.name %> forgives this.</em>
 
 <% else %>
