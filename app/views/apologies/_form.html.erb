@@ -1,0 +1,9 @@
+<%= form_for @apology do |f| %>
+    <%= f.label "Apology:" %>
+    <%= f.text_area :body %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :incident_id, value: @incident.id %>
+<% end %>
+<br><br>
+    <%= f.submit "Apologize" %>
+<% end %>
