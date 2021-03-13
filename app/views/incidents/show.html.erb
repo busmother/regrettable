@@ -2,20 +2,22 @@
 <b><%= @incident.name%></b>
 <br>
 <br>
-<% if @incident.apologized?(current_user) && @incident.apologies.count > 2%>
-    <em><%link_to current_user.name, current_user%>, <%link_to @incident.apologies.first.user.name, @incident.apologies.first.user%> and <%=@incident.apologies.count-2%> others forgive for this:</em>
-<% elsif @incident.apologized?(current_user) && @incident.apologies.count == 2 %>
-    <em><%link_to current_user.name, current_user%> and <%link_to @incident.apologies.first.user.name, @incident.apologies.first.user%> forgive this:</em>
-<% elsif @incident.apologized?(current_user) && @incident.apologies.count == 1 %>
-    <em><%link_to current_user.name, current_user%> forgives this:</em>
-<% elsif !@incident.apologized?(current_user) && @incident.apologies.count > 3%>
-    <em><%= link_to @incident.apologies.first.user.name, @incident.apologies.first.user%> and <%=@incident.apologies.count-1%> others apologize for this.</em>
-<% elsif !@incident.apologized?(current_user) && @incident.apologies.count == 2%>
-    <em><%= link_to @incident.apologies.first.user.name, @incident.apologies.first.user %> and <%= link_to @incident.apologies.last.user.name, @incident.apologies.last.user%> forgive this.</em>
-<% elsif !@incident.apologized?(current_user) && @incident.apologies.count == 1%>
-    <em><%= link_to @incident.apologies.first.users.first.name, @incident.apologies.first.users.first %> forgive this.</em>
+<% if @incident.apologized?(current_user) && @incident.apology_users_count > 3%>
+    <em><%link_to current_user.name, current_user%>, <%link_to @incident.apologies.first.user.name, @incident.apologies.first.user%> and <%=@incident.apology_users_count-2%> others apologize for this:</em>
+<% elsif @incident.apologized?(current_user) && @incident.apology_users_count == 3 %>
+    <em><%link_to current_user.name, current_user%>, <%link_to @incident.apologies.first.user.name, @incident.apologies.first.user%>, and 1 other apologize for this:</em>
+    <% elsif @incident.apologized?(current_user) && @incident.apology_users_count == 2 %>
+    <em><%link_to current_user.name, current_user%> and <%link_to @incident.apologies.first.user.name, @incident.apologies.first.user%> apologize for this:</em>
+<% elsif @incident.apologized?(current_user) && @incident.apology_users_count == 1 %>
+    <em><%link_to current_user.name, current_user%> apologizes for this:</em>
+<% elsif !@incident.apologized?(current_user) && @incident.apology_users_count > 3%>
+    <em><%= link_to @incident.apologies.first.user.name, @incident.apologies.first.user%> and <%=@incident.apology_users_count-1%> others apologize for this:</em>
+<% elsif !@incident.apologized?(current_user) && @incident.apology_users_count == 2%>
+    <em><%= link_to @incident.apologies.first.user.name, @incident.apologies.first.user %> and <%= link_to @incident.apologies.last.user.name, @incident.apologies.last.user%> apologize for this:</em>
+<% elsif !@incident.apologized?(current_user) && @incident.apology_users_count == 1%>
+    <em><%= link_to @incident.apologies.first.user.name, @incident.apologies.first.user %> apologizes for this:</em>
 <% else %>
-    <em>No one forgives this. Will you be first?.</em>
+    <em>No one has apologized for this. Will you be first?.</em>
 <%end%>
 <br>
 <br>

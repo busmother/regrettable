@@ -5,7 +5,4 @@ class ForgivenessesController < ApplicationController
         @forgiveness = Forgiveness.new
     end
 
-    def create
-        
-    end
 end
