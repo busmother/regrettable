@@ -17,6 +17,7 @@ class ApologiesController < ApplicationController
         redirect_to apology_path(@apology)
     end
 
+
     # def forgive #original
     #     @apology = Apology.all.find(params[:id])
     #     Forgiveness.create(user_id: current_user.id, apology_id: @apology.id)
