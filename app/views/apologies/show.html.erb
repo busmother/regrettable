@@ -28,6 +28,8 @@
     <em>No one forgives this yet - will you be the first?</em>
 <%end%>
 <br><br>
+
+<br><br>
 <% if @apology.forgiven?(current_user) %>
     <%= link_to "Unforgive", forgiveness_path(@apology), method: "delete" %>
 <% else %>

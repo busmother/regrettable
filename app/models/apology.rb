@@ -8,8 +8,8 @@ class Apology < ApplicationRecord
     !!self.forgivenesses.find{|forgiveness| forgiveness.user_id == user.id}
   end
 
-def forgives_count
-    self.forgivenesses.count
-end
+  def forgives_count
+      self.forgivenesses.count
+  end
   
 end
