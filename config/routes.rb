@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  devise_for :users, skip: [:sessions] #if you turn this on and turn devise_for :users off, you can at least get sign in
+  devise_for :users, skip: [:sessions] 
   as :user do
     get '/signup', to: 'devise/registrations#new', as: :new_user
     get 'signin', to: 'devise/sessions#new', as: :new_user_session
