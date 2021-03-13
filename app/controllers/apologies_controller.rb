@@ -17,6 +17,12 @@ class ApologiesController < ApplicationController
         redirect_to apology_path(@apology)
     end
 
+    def create #very similar to create method in incidents_controller
+        # byebug
+        @apology = Apology.create(user_id: current_user.id, incident_id: params[:apology][:incident_id], body: params[:apology][:body])
+        redirect_to incident_path(@incident )
+    end
+
 
     # def forgive #original
     #     @apology = Apology.all.find(params[:id])

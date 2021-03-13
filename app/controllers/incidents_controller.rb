@@ -3,6 +3,7 @@ class IncidentsController < ApplicationController
 
     def show
         @incident = Incident.find(params[:id])
+        @apology = Apology.new
     end
 
     def new
