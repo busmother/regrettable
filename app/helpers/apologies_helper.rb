@@ -33,7 +33,7 @@ module ApologiesHelper
     end
 
     def show_header(apology)
-        "#{link_to @apology.user.name, @apology.user} apologises for #{link_to @apology.incident.name, @apology.incident}"
+        "#{link_to apology.user.name, apology.user} apologises for #{link_to apology.incident.name, apology.incident}"
     end
 
 
