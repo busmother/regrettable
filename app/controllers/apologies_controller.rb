@@ -1,5 +1,6 @@
 class ApologiesController < ApplicationController
     # before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+    helper ApologiesHelper
 
     def show
         @apology = Apology.find(params[:id])
