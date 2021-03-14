@@ -1,5 +1,4 @@
-<%# <% byebug %> %>
-<b> <%=link_to @apology.user.name, @apology.user%> </b> apologises for <b> <%=link_to @apology.incident.name, @apology.incident%> </b> 
+<b> <%=show_header(@apology).html_safe%> </b> 
 <br>
 <br>
 <%= @apology.body%>
