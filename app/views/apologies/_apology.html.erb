@@ -1,12 +1,11 @@
-<b> <%=link_to @apology_user.name, @apology_user%> </b> apologises for <b> <%=link_to @apology.incident.name, @apology.incident%> </b> 
+<%# <% byebug %> %>
+<b> <%=link_to @apology.user.name, @apology.user%> </b> apologises for <b> <%=link_to @apology.incident.name, @apology.incident%> </b> 
 <br>
 <br>
 <%= @apology.body%>
 <br>
 <br>
-
 <em> <%= show_forgives(@apology).html_safe %> </em>
-
-<br><br>
-
+<br>
+<br>
 <%= show_forgive_button(@apology).html_safe %>
