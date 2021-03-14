@@ -24,4 +24,14 @@ module ApologiesHelper
         end
     end
 
+    def show_forgive_button(apology)
+        if apology.forgiven?(current_user)
+            "#{link_to 'Unforgive', forgiveness_path(apology), method: 'delete'}"
+        else
+            "#{link_to 'Forgive', forgiveness_path(apology), method: 'put'}"
+        end
+    end
+
+
+
 end
