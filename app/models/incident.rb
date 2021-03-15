@@ -1,6 +1,7 @@
 class Incident < ApplicationRecord
     has_many :apologies
     has_many :users, through: :apologies
+    validates :body, length: {minimum: 5}
     accepts_nested_attributes_for :apologies
 
     def apologized?(user)
