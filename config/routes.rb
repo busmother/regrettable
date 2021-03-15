@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  devise_for :users, skip: [:sessions] 
+  devise_for :users, skip: [:sessions] , controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   as :user do
     get '/signup', to: 'devise/registrations#new', as: :new_user
     get 'signin', to: 'devise/sessions#new', as: :new_user_session
