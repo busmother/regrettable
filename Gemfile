@@ -27,7 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'master'
+# gem 'omniauth', '>= 1.0.0.pr2'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 
