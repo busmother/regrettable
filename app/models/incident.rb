@@ -1,8 +1,7 @@
 class Incident < ApplicationRecord
     has_many :apologies
     has_many :users, through: :apologies
-    validates :name, length: {minimum: 5}
-    accepts_nested_attributes_for :apologies
+    accepts_nested_attributes_for :apologies, allow_destroy: true
 
     def apologized?(user)
         !!self.apologies.find{|apology| apology.user_id == user.id}

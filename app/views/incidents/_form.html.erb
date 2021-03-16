@@ -9,7 +9,7 @@
     <%= f.label "Or log a new incident:" %>
     <%= f.text_field :name %>
 <br><br>
-    <%= f.fields_for :apologies do |a| %>
+    <%= f.fields_for :apologies do |a| %> 
         <%= a.label "Apology:" %>
         <%= a.text_area :body %>
         <%= a.hidden_field :user_id, value: current_user.id %>

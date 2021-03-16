@@ -21,7 +21,6 @@ class IncidentsController < ApplicationController
     # end
 
     def create #updated method with flash
-        # binding.pry
         @incidents = Incident.all
         @incident = Incident.new(incident_params)
         if @incident.valid?
@@ -30,7 +29,6 @@ class IncidentsController < ApplicationController
             redirect_to apology_path(@apology)
         else
             flash.now[:messages] = @incident.errors.full_messages[0]
-            # byebug
             render :new
         end
     end

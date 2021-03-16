@@ -38,7 +38,7 @@ module ApologiesHelper
 
     def show_edit_or_forgive(apology)
         if apology.user == current_user
-            "#{link_to "Edit your apology", edit_apology_path(apology)}, #{link_to "Remove apology", delete_apology_path(apology)}"
+            "#{button_to "Edit your apology", edit_apology_path(apology)} <br> #{button_to "Remove apology", apology_path(apology), method: 'delete'}"
         else
             show_forgive(apology)
         end
