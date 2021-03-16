@@ -8,6 +8,8 @@ module ApologiesHelper
                 "#{link_to "You", current_user} and 1 other forgive this"
             elsif apology.forgives_count == 1
                 "#{link_to "You", current_user} forgive this"
+            elsif apology.forgives_count == 0 && apology.user == current_user
+                "No one forgives this yet"
             else
                 "No one forgives this yet - will you be the first?"
             end
@@ -18,6 +20,8 @@ module ApologiesHelper
                 "#{link_to apology.first_forgive.name, apology.first_forgive} and 1 other forgive this"
             elsif apology.forgives_count == 1
                 "#{link_to apology.first_forgive.name, apology.first_forgive} forgive this"
+            elsif apology.forgives_count == 0 && apology.user == current_user
+                "No one forgives this yet"
             else
                 "No one forgives this yet - will you be the first?"
             end
