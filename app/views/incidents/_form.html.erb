@@ -1,3 +1,8 @@
+<%# <%byebug%> 
+<% if flash[:messages] %>
+    <em><%= flash[:messages] %></em>
+<% end %>
+
 <%= form_for @incident do |f| %>
     <%= f.label "Select an incident to apologize for:" %>
     <%= f.select :name, @incidents.collect {|i| [i.name] }, include_blank: true %> <br>
