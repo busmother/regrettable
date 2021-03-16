@@ -14,6 +14,7 @@ class IncidentsController < ApplicationController
     end
 
     def create
+        # binding.pry
         @incident = Incident.create!(incident_params)
         @apology = @incident.apologies.last
         redirect_to apology_path(@apology)

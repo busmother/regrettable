@@ -22,13 +22,23 @@ class ApologiesController < ApplicationController
         redirect_to apology_path(@apology)
     end
 
+    def edit
+        @apology = current_user.apologies.find(params[:id])
+        @incident = @apology.incident
+    end
 
-    # def forgive #original
-    #     @apology = Apology.all.find(params[:id])
-    #     Forgiveness.create(user_id: current_user.id, apology_id: @apology.id)
-    #     redirect_to apology_path(@apology)
-    # end
+    def update
+        @apology = Apology.all.find(params[:id])
+        @apology.update(body: params[:apology][:body])
+        redirect_to apology_path(@apology)
+    end
 
+    def delete
+        @apology = current_user.apologies.find(params[:id])
+        @incident = @apology.incident
+        @apology.destroy
+        redirect_to incident_path(@incident)
+    end
 end
 
 
