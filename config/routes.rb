@@ -14,8 +14,6 @@ Rails.application.routes.draw do
     get 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  # devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
   #here we're sending a put request with the id of the apology we want to forgive and we are calling our forgive method in our controller
   get '/apology/:id/forgiveness', to: 'apologies#forgive', as: 'forgiveness'
   delete '/apology/:id/forgiveness', to: 'apologies#unforgive'
