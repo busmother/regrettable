@@ -1,3 +1,7 @@
+<% if flash[:messages] %>
+    <em><%= flash[:messages] %></em>
+<% end %>
+
 <%= form_for @apology do |f| %>
     <%= f.label "Apology:" %>
     <%= f.text_area :body %>

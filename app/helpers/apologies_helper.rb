@@ -47,7 +47,7 @@ module ApologiesHelper
             if apology.forgiven?(current_user)
                 "#{button_to 'Unforgive', forgiveness_path(apology), method: 'delete'}"
             else
-                "#{button_to 'Forgive', forgiveness_path(apology), method: 'get'}"
+                "#{button_to 'Forgive', forgiveness_path(apology), method: 'put'}"
             end
         end
     end

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   #here we're sending a put request with the id of the apology we want to forgive and we are calling our forgive method in our controller
-  get '/apology/:id/forgiveness', to: 'apologies#forgive', as: 'forgiveness'
+  put '/apology/:id/forgiveness', to: 'apologies#forgive', as: 'forgiveness'
   delete '/apology/:id/forgiveness', to: 'apologies#unforgive'
 
 end

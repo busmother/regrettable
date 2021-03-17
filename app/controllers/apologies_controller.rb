@@ -22,10 +22,15 @@ class ApologiesController < ApplicationController
         forgive
     end
 
-    def create #very similar to create method in incidents_controller
-        @apology = Apology.create(user_id: current_user.id, incident_id: params[:apology][:incident_id], body: params[:apology][:body])
+    def create 
+        @apology = Apology.new(user_id: current_user.id, incident_id: params[:apology][:incident_id], body: params[:apology][:body])
         @incident = @apology.incident
-        redirect_to incident_path(@incident)
+        if @apology.valid?
+            @apology.save
+            redirect_to incident_path(@incident)
+        else
+            flash.now[:messages] = @apology.errors.full_messages[0]
+        end
     end
 
     def edit

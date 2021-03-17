@@ -3,7 +3,9 @@ class Apology < ApplicationRecord
   belongs_to :incident
   has_many :forgivenesses
   has_many :users, through: :forgivenesses
-  validates :body, length: {minimum: 50}
+  validates :body, length: {minimum: 50} 
+  validates :incident_id, presence: :true
+  validates :user_id, presence: :true
   scope :long_apology, -> {where("LENGTH(body) > 2000")}
   scope :newest_apologies, -> {order(created_at: :desc)}
 

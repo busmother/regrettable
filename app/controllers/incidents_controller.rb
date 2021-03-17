@@ -11,14 +11,7 @@ class IncidentsController < ApplicationController
         @incidents = Incident.all
         @incident = Incident.new
         @incident.apologies.build
-    end
-
-    # def create #original method
-    #     # binding.pry
-    #     @incident = Incident.create!(incident_params)
-    #     @apology = @incident.apologies.last
-    #     redirect_to apology_path(@apology)
-    # end
+    end 
 
     def create #updated method with flash
         @incidents = Incident.all
@@ -26,7 +19,7 @@ class IncidentsController < ApplicationController
         if @incident.valid?
             @incident.save
             @apology = @incident.apologies.last
-            redirect_to apology_path(@apology)
+            redirect_to incident_path(@incident)
         else
             flash.now[:messages] = @incident.errors.full_messages[0]
             render :new
