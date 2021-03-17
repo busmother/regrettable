@@ -4,6 +4,7 @@ class Apology < ApplicationRecord
   has_many :forgivenesses
   has_many :users, through: :forgivenesses
   validates :body, length: {minimum: 50}
+  scope :long_apology, -> {where("LENGTH(body) > 2000")}
 
   def forgiven?(user)
     !!self.forgivenesses.find{|forgiveness| forgiveness.user_id == user.id}
