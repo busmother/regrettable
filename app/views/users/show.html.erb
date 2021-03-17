@@ -1,11 +1,3 @@
 <%=@user.name%>'s regrets:
 
-<ul>
-<%= @user.apologies.each do |a| %>
-    <li> <%=link_to a.incident.name, a.incident%>
-    <br>
-    <%=a.body%>
-    </li>
-<%end%>
-</ul>
-
+<%= render 'apologies/index', locals: {user: @user}%>

@@ -6,7 +6,8 @@ class UsersController < ApplicationController
         if current_user == nil
             #redirect to sign up
         end
-            @user = User.find(params[:id]) #this will
+            @user = User.find(params[:id])
+            @apologies = @user.apologies
     end
 
 end

@@ -6,9 +6,7 @@
 <br>
 <br>
 <ul>
-<% @apologies.each do |a|%>
-<li><%= render 'apologies/apology', :locals => {:@apology => a, :@user => a.user, :@incident => a.incident} %></li>
-<%end%>
+<%= render 'apologies/index'%>
 </ul>
 <br>
 <br>

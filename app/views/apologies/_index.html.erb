@@ -1,0 +1,10 @@
+<ul>
+<% @apologies.each do |apology| #in order for this to work @apologies needs to be declared in the controller%>
+<li>
+<%= link_to apology.user.name, apology.user%> <%= link_to "apologises", apology %> for <%= link_to apology.incident.name, apology.incident%><br>
+<%= apology.body %><br><br>
+<%= show_forgives(apology).html_safe%><br><br>
+<%= show_apology_buttons(apology).html_safe%><br>
+</li>
+<% end %>
+</ul>

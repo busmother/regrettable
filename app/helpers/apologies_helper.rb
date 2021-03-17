@@ -1,7 +1,7 @@
 module ApologiesHelper
 
     def show_header(apology)
-        "#{link_to apology.user.name, apology.user} #{link_to "apologises", apology} for #{link_to apology.incident.name, apology.incident}"
+        "#{link_to apology.user.name, user_path(apology.user)} #{link_to "apologises", apology_path(apology)} for #{link_to apology.incident.name, incident_path(apology.incident)}"
     end
 
     def show_forgives(apology)
@@ -40,14 +40,6 @@ module ApologiesHelper
     #     end
     # end
 
-    # def show_edit_or_forgive(apology)
-    #     if apology.user == current_user
-    #         "#{button_to "Edit your apology", edit_apology_path(apology)} <br> #{button_to "Remove apology", apology_path(apology), method: 'delete'}"
-    #     else
-    #         show_forgive(apology)
-    #     end
-    # end
-
     def show_apology_buttons(apology)
         if apology.user == current_user
             "#{button_to "Edit your apology", edit_apology_path(apology)} <br> #{button_to "Remove apology", apology_path(apology), method: 'delete'}"
@@ -55,7 +47,7 @@ module ApologiesHelper
             if apology.forgiven?(current_user)
                 "#{button_to 'Unforgive', forgiveness_path(apology), method: 'delete'}"
             else
-                "#{button_to 'Forgive', forgiveness_path(apology), method: 'put'}"
+                "#{button_to 'Forgive', forgiveness_path(apology), method: 'get'}"
             end
         end
     end
