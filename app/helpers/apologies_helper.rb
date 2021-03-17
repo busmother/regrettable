@@ -56,7 +56,7 @@ module ApologiesHelper
 
     def order_apologies_newest(apologies)
         Apology.newest_apologies.each do |apology|
-            render 'apologies/apology'
+            "<li> #{render 'apologies/apology', locals: {apology: @apology, user: @apology.user}} </li>"
         end
     end
 
