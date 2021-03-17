@@ -17,8 +17,4 @@ class Apology < ApplicationRecord
       self.forgivenesses.count
   end
 
-  def first_forgive
-    self.forgivenesses.first.user
-  end
-  
 end

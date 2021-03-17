@@ -13,7 +13,8 @@ class IncidentsController < ApplicationController
         @incident.apologies.build
     end 
 
-    def create #updated method with flash
+    def create
+        byebug
         @incidents = Incident.all
         @incident = Incident.new(incident_params)
         if @incident.valid?
@@ -28,7 +29,7 @@ class IncidentsController < ApplicationController
 
     private
 
-    def incident_params
+    def incident_params #if we can't include 
         params.require(:incident).permit(
             :name,
             apologies_attributes: [
