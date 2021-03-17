@@ -54,4 +54,10 @@ module ApologiesHelper
         end
     end
 
+    def order_apologies_newest(apologies)
+        Apology.newest_apologies.each do |apology|
+            render 'apologies/apology'
+        end
+    end
+
 end
