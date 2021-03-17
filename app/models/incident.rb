@@ -1,6 +1,7 @@
 class Incident < ApplicationRecord
-    has_many :apologies
+    has_many :apologies, inverse_of: :incident
     has_many :users, through: :apologies
+    validates :name, presence: :true
     accepts_nested_attributes_for :apologies, allow_destroy: true
 
     def apologized?(user)
