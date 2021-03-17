@@ -6,22 +6,9 @@
 <br>
 <br>
 <ul>
-<%= @apologies.each do |apology|%>
-<li>
-<b> <%=show_header(apology).html_safe%> </b> 
-<br>
-<br>
-<%= apology.body%>
-<br>
-<br>
-<em> <%= show_forgives(apology).html_safe %> </em>
-<br>
-<br><%apology.id%>
-<%= show_edit_or_forgive(apology).html_safe %>
-<br>
-<br>
-</li>
-<% end %>
+<% @apologies.each do |a|%>
+<li><%= render 'apologies/apology', :locals => {:@apology => a, :@user => a.user, :@incident => a.incident} %></li>
+<%end%>
 </ul>
 <br>
 <br>

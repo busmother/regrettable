@@ -30,9 +30,9 @@ module ApologiesHelper
 
     def show_forgive(apology)
         if apology.forgiven?(current_user)
-            "#{link_to 'Unforgive', forgiveness_path(apology), method: 'delete'}"
+            "#{button_to 'Unforgive', forgiveness_path(apology), method: 'delete'}"
         else
-            "#{link_to 'Forgive', forgiveness_path(apology), method: 'put'}"
+            "#{button_to 'Forgive', forgiveness_path(apology), method: 'put'}"
         end
     end
 
