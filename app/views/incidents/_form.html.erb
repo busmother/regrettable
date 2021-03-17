@@ -1,6 +1,8 @@
 <%# <%byebug%> 
 <% if flash[:messages] %>
-    <em><%= flash[:messages] %></em>
+    <div class="alert alert-info">
+        <em><%= flash[:messages] %></em>
+    <div>
 <% end %>
 
 <%= form_for @incident do |f| %>
