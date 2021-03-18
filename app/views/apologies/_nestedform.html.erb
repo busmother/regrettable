@@ -1,20 +1,26 @@
-<%= form_for(@apology) do |f|%>
-  <div>
-    <%= f.label :body%>
-    <%= f.text_field :body%>
-  </div><br>
+<% if flash[:messages] %>
+    <div class="alert alert-info">
+        <em><%= flash[:messages] %></em>
+    <div>
+<% end %>
+
+<%= form_for @apology do |f|%>
 	
   <div>
-    <label for="incident_id">Select an incident:</label>
+    <label for="incident_id">Select an incident to apologize for:</label>
     <%= f.collection_select :incident_id, @incidents, :id, :name, prompt: true%>
   </div><br>
   <div>
-    <h3>Or create a new incident:</h3>
     <%= f.fields_for :incident, Incident.new do |i|%>
-        <%= i.label :name, "Incident:" %>
+        <%= i.label :name, "Or log a new incident:" %>
         <%= i.text_field :name %>
     <% end %>
   </div>
+
+    <div>
+    <%= f.label :body, "Apology:"%>
+    <%= f.text_area :body%>
+  </div><br>
 	
   <%= f.submit %>
 	
