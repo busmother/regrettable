@@ -16,19 +16,45 @@ class ApologiesController < ApplicationController
 
     def new #new new
         @incidents = Incident.all
-        @incident = Incident.new
+        @incident = Incident.new #we need this otherwise the new incident field doesn't exist
         @apology = Apology.new
     end
 
-    def create 
-        @apology = Apology.new(user_id: current_user.id, incident_id: params[:apology][:incident_id], body: params[:apology][:body])
-        @incident = @apology.incident
+    # def create 
+    #     @apology = Apology.new(user_id: current_user.id, incident_id: params[:apology][:incident_id], body: params[:apology][:body])
+    #     # byebug
+    #     @incident = Incident.find_or_create_by(name: params[:apology][:incident_attributes][:name])
+    #     @apology.incident = @incident
+    #     byebug
+    #     # if @incident == nil
+    #     #     @incident = Incident.find_by(incident_id: params[:apology][:incident_id])
+
+    #     if @apology.valid?
+    #         @apology.save
+    #         redirect_to incident_path(@incident)
+    #     else
+    #         flash.now[:messages] = @apology.errors.full_messages
+    #         @incidents = Incident.all
+    #         render :new
+    #     end
+    # # end
+    # end
+
+    def create #new create
         # byebug
+        if params[:apology][:incident_id].to_i > 0 #if you use the dropdown there will be an incident_id >0; if not, it will be "", which is 0
+            @incident = Incident.find(params[:apology][:incident_id]) # so we find the incident
+        else
+            @incident = Incident.find_or_create_by(name: params[:apology][:incident_attributes][:name])#this works if you use the form
+        end
+        @apology = Apology.new(user_id: current_user.id, incident_id: @incident.id, body: params[:apology][:body])
         if @apology.valid?
             @apology.save
+            # byebug
             redirect_to incident_path(@incident)
         else
             flash.now[:messages] = @apology.errors.full_messages
+            @incidents = Incident.all
             render :new
         end
     end
@@ -69,9 +95,9 @@ class ApologiesController < ApplicationController
 
     private
 
-    def apology_params
-        params.require(:apology).permit(:body, :incident_attributes: [:name])
-    end
+    # def apology_params
+    #     params.require(:apology).permit(:body, :incident_attributes: [:name])
+    # end
 end
 
 
