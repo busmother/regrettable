@@ -41,7 +41,6 @@ class ApologiesController < ApplicationController
     # end
 
     def create #new create
-        # byebug
         if params[:apology][:incident_id].to_i > 0 #if you use the dropdown there will be an incident_id >0; if not, it will be "", which is 0
             @incident = Incident.find(params[:apology][:incident_id]) # so we find the incident
         else
@@ -50,7 +49,6 @@ class ApologiesController < ApplicationController
         @apology = Apology.new(user_id: current_user.id, incident_id: @incident.id, body: params[:apology][:body])
         if @apology.valid?
             @apology.save
-            # byebug
             redirect_to incident_path(@incident)
         else
             flash.now[:messages] = @apology.errors.full_messages
