@@ -8,6 +8,7 @@ class Apology < ApplicationRecord
   validates :user_id, presence: :true
   scope :long_apology, -> {where("LENGTH(body) > 2000")}
   scope :newest_apologies, -> {order(created_at: :desc)}
+  accepts_nested_attributes_for :incident
 
   def forgiven?(user)
     !!self.forgivenesses.find{|forgiveness| forgiveness.user_id == user.id}

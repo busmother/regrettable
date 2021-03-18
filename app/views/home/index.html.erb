@@ -1,1 +1,4 @@
-<%= show_home.html_safe %>
+<%= if user_signed_in %>
+<%= render 'home'%>
+<% else %>
+<% end %>

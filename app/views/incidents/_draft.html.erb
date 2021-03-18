@@ -1,0 +1,21 @@
+<%= form_for(@apology) do |f|%>
+  <div>
+    <%= f.label :body%>
+    <%= f.text_field :body%>
+  </div><br>
+	
+  <div>
+    <label for="incident_id">Select an incident:</label>
+    <%= f.collection_select :incident_id, @incidents, :id, :name, prompt: true%>
+  </div><br>
+  <div>
+    <h3>Or create a new incident:</h3>
+    <%= f.fields_for :incident, Incident.new do |i|%>
+        <%= i.label :name, "Incident:" %>
+        <%= i.text_field :name %>
+    <% end %>
+  </div>
+	
+  <%= f.submit %>
+	
+<% end %>
