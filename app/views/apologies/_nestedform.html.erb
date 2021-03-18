@@ -11,7 +11,7 @@
     <%= f.collection_select :incident_id, @incidents, :id, :name, prompt: true%>
   </div><br>
   <div>
-    <%= f.fields_for :incident, Incident.new do |i|%>
+    <%= f.fields_for :incident, @incident do |i|%>
         <%= i.label :name, "Or log a new incident:" %>
         <%= i.text_field :name %>
     <% end %>

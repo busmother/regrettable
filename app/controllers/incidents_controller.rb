@@ -14,7 +14,7 @@ class IncidentsController < ApplicationController
         @apology = Apology.new
     end 
 
-    def create
+    def create #also unnecessary?
         # byebug
         @incidents = Incident.all
         @incident = Incident.new(incident_params)
