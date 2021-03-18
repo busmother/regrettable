@@ -17,6 +17,7 @@ class IncidentsController < ApplicationController
         # byebug
         @incidents = Incident.all
         @incident = Incident.new(incident_params)
+        @incident.apologies.last.user_id = current_user.id
         if @incident.valid?
             @incident.save
             @apology = @incident.apologies.last

@@ -6,14 +6,13 @@
 
 <%= form_for @incident do |f| %>
     <%= f.label "Select an incident to apologize for:" %>
-    <%= f.select :name, @incidents.collect {|i| [i.name] }, include_blank: true %> <br>
+    <%= f.select :incident_id, @incidents.collect {|i| [i.name, i.id] }, include_blank: true %> <br>
     <%= f.label "Or log a new incident:" %>
     <%= f.text_field :name %>
 <br><br>
     <%= f.fields_for :apologies do |a| %> 
         <%= a.label "Apology:" %>
         <%= a.text_area :body %>
-        <%= a.hidden_field :user_id, value: current_user.id %>
     <% end %>
 <br><br>
     <%= f.submit "Apologize" %>

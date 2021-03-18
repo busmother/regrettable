@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :apologies
   resources :incidents
-  resources :users, only: [:show]
   devise_for :users, skip: [:sessions] , controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   as :user do
     get '/signup', to: 'devise/registrations#new', as: :new_user
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
     post 'signin', to: 'devise/sessions#create', as: :user_session
     get 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
+  resources :users, only: [:show]
 
   root to: "home#index"
 
