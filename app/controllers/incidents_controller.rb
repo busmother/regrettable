@@ -7,10 +7,11 @@ class IncidentsController < ApplicationController
         @apology = Apology.new
     end
 
-    def new
+    def new #unnecessary now?
         @incidents = Incident.all
         @incident = Incident.new
         @incident.apologies.build
+        @apology = Apology.new
     end 
 
     def create

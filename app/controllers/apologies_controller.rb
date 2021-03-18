@@ -7,6 +7,13 @@ class ApologiesController < ApplicationController
         @apology_user = @apology.user
     end
 
+    def new
+        @incidents = Incident.all
+        @incident = Incident.new
+        # @incident.apologies.build
+        @apology = Apology.new
+    end
+
     def forgive
         @apology = Apology.all.find(params[:id])
         @incident = @apology.incident
