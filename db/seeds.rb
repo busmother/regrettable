@@ -2,7 +2,7 @@ User.create(name: "Andrew Cuomo", email: "a.cuomo@gmail.com", password: "passwor
 User.create(name: "Justin Timberlake", email: "j.timberlake@yahoo.com", password: "password") #2
 User.create(name: "Taylor Swift", email: "swifty@me.com", password: "password") #3
 User.create(name: "Sarah Huckabee Sanders", email: "sarah.huck@applebees.com", password: "password") #4
-User.create(name: "Justin Bieber", email: "swifty@me.com", password: "password") #5
+User.create(name: "Justin Bieber", email: "jbiebs@me.com", password: "password") #5
 User.create(name: "Chance the Rapper", email: "chance@me.com", password: "password") #6
 User.create(name: "Jeff Bezos", email: "jeff@amazon.com", password: "password") #7
 User.create(name: "Wendy Williams", email: "wendy@wendy.com", password: "password") #8
@@ -12,9 +12,9 @@ User.create(name: "Bob Iger", email: "b.iger@disney.com", password: "password") 
 User.create(name: "Snoop Dogg", email: "d_oh_double_g@me.com", password: "password") #12
 User.create(name: "Victoria Fuller", email: "fuller_v@gmail.com", password: "password") #13
 User.create(name: "Scheana Shay", email: "s.shay.away@yahoo.com", password: "password") #14
-User.create(name: "Sherry Pie", email: "m.john@me.com", password: "password") #15
+User.create(name: "Sherry Pie", email: "sherry_on_top@me.com", password: "password") #15
 User.create(name: "Corey Feldman", email: "felderman.c@gmail.com", password: "password") #16
-User.create(name: "Vanessa Hudgens", email: "m.john@me.com", password: "password") #17
+User.create(name: "Vanessa Hudgens", email: "v.hudgens@me.com", password: "password") #17
 User.create(name: "Evangeline Lilly", email: "lillyevangeline@yahoo.com", password: "password") #18
 User.create(name: "Tyra Banks", email: "tyrathebank@gmail.com", password: "password") #19
 User.create(name: "Jimmy Kimmel", email: "jimmy@tonightshow.com", password: "password") #20
@@ -25,9 +25,9 @@ User.create(name: "Doja Cat", email: "bitchboss@me.com", password: "password") #
 User.create(name: "Jimmy Fallon", email: "jimmy@thetonightshow.com", password: "password") #25
 User.create(name: "Karol G", email: "g.karol@yahoo.com", password: "password") #26
 User.create(name: "Lea Michele", email: "leaismea@me.com", password: "password") #27
-User.create(name: "Rachel Griffiths", email: "m.john@me.com", password: "password") #28
+User.create(name: "Rachel Griffiths", email: "griffiths.rachel@me.com", password: "password") #28
 User.create(name: "Abby Lee Miller", email: "dancemom23@me.com", password: "password") #29
-User.create(name: "Roberto Aguirre- Sacasa", email: "ras@riverdaleshow.com", password: "password") #30
+User.create(name: "Roberto Aguirre-Sacasa", email: "ras@riverdaleshow.com", password: "password") #30
 User.create(name: "Alia Shawkat", email: "a.shawkat@arresteddevelopment.com", password: "password") #31
 User.create(name: "Dee Nguyen", email: "dee@thechallenge.com", password: "password") #32
 User.create(name: "Spike Lee", email: "spikeleejoint@gmail.com", password: "password") #33
@@ -49,9 +49,9 @@ Incident.create(name: "Fining an elementary school $250 for playing 'The Lion Ki
 Incident.create(name: "Overreacting to Gayle King") #6
 Incident.create(name: "Being Homophobic") #7
 Incident.create(name: "Modeling for 'White Lives Matter' clothing company") #8
-Incident.create(name: "Posing as a casting director to take advantage of people") #9
+Incident.create(name: "Catfishing") #9
 Incident.create(name: "Not taking the COVID19 pandemic seriously") #10
-Incident.create(name: "Insenstive comments about the appearance of others") #11
+Incident.create(name: "Insensitive comments about the appearance of others") #11
 Incident.create(name: "Calling Mike Pence 'a big box of nothing'") #12
 Incident.create(name: "Singling out Asian women for selling products") #13
 Incident.create(name: "Blaming China for COVID19") #14
