@@ -1,0 +1,6 @@
+<h3>10 recent apologies:</h3>
+<ul>
+<% Apology.newest_apologies.take(10).each do |apology|%>
+<li><%= apology.user.name%> apologizes for <%= link_to apology.incident.name, apology_path(apology)%>, <%=time_ago_in_words(apology.created_at)%> ago </li>
+<%end%>
+</ul>

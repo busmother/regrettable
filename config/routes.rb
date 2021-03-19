@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   put '/apology/:id/forgiveness', to: 'apologies#forgive', as: 'forgiveness'
   delete '/apology/:id/forgiveness', to: 'apologies#unforgive'
 
+  get '/newest_apologies', to: 'apologies#newest_apologies'
+
 end

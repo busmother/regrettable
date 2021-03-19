@@ -32,14 +32,6 @@ module ApologiesHelper
         end
     end
 
-    # def show_forgive(apology)
-    #     if apology.forgiven?(current_user)
-    #         "#{button_to 'Unforgive', forgiveness_path(apology), method: 'delete'}"
-    #     else
-    #         "#{button_to 'Forgive', forgiveness_path(apology), method: 'put'}"
-    #     end
-    # end
-
     def show_apology_buttons(apology)
         if apology.user == current_user
             "#{button_to "Edit your apology", edit_apology_path(apology)} <br> #{button_to "Remove apology", apology_path(apology), method: 'delete'}"

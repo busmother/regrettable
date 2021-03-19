@@ -2,7 +2,7 @@ module HomeHelper
 
     def all_users
         @users.each do |user|
-            "<li> #{link_to user.name, user_path(user)} </li>"
+            "#{link_to user.name, user} "
         end
     end
 

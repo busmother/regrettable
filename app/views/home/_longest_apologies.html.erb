@@ -1,0 +1,5 @@
+<ul>
+<% Apology.long_apology.each do |apology|%>
+<li><%= apology.user.name%> apologizes for <%= link_to apology.incident.name, apology_path(apology)%> (<%= apology.body.split.size%> words)
+<%end%>
+</ul>
