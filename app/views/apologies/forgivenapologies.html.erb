@@ -1,0 +1,8 @@
+<h3>All of the apologies <%=@user.name%> has forgiven</h3>
+<ul>
+<%= @user.forgiven_apologies.each do |fa|%>
+<li> <%= fa.user.name%> apologizes for <%= fa.incident.name%><br><br> 
+    <%= fa.body %>
+    <%end%>
+</li>
+</ul>

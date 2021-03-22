@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   get '/newest_apologies', to: 'apologies#newest_apologies'
 
+  get '/users/:id/forgivenesses', to: 'apologies#forgivenapologies'
+
 end

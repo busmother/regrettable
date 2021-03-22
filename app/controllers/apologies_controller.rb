@@ -1,5 +1,5 @@
 class ApologiesController < ApplicationController
-    # before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
     helper ApologiesHelper
 
     def show
@@ -40,10 +40,11 @@ class ApologiesController < ApplicationController
     # # end
     # end
 
-    def create #new create
+    def create #new create #this would be a great method to refactor using nested attributes in the Apology class
         if params[:apology][:incident_id].to_i > 0 #if you use the dropdown there will be an incident_id >0; if not, it will be "", which is 0
             @incident = Incident.find(params[:apology][:incident_id]) # so we find the incident
         else
+            #custom writer method to accept the incident attributes (so you con't have to manually call it)
             @incident = Incident.find_or_create_by(name: params[:apology][:incident_attributes][:name])#this works if you use the form
         end
         @apology = Apology.new(user_id: current_user.id, incident_id: @incident.id, body: params[:apology][:body])
@@ -63,7 +64,7 @@ class ApologiesController < ApplicationController
     end
 
     def update
-        @apology = Apology.all.find(params[:id])
+        @apology = current_user.apologies.find(params[:id])
         @apology.update(body: params[:apology][:body])
         redirect_to apology_path(@apology)
     end
@@ -91,11 +92,20 @@ class ApologiesController < ApplicationController
         forgive
     end
 
+    def forgivenapologies
+        @user = User.find(params[:id])
+        
+    end
+
     private
 
     # def apology_params
     #     params.require(:apology).permit(:body, :incident_attributes: [:name])
     # end
+
+    def current_user_apology #set this as a before action so you dont have to have a repeated line in edit +update + destroy
+        @apology = current_user.apologies.find(params[:id])
+    end
 end
 
 

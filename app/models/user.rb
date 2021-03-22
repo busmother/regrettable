@@ -4,10 +4,9 @@ class User < ApplicationRecord
   has_many :apologies
   has_many :forgivenesses
   has_many :incidents, through: :apologies
-  has_many :forgiven_apologies, through: :forgives
+  has_many :forgiven_apologies, through: :forgivenesses, :source => :apology #you need the source so it's not confused about user's apologies that they made and the ones they forgive
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
-  #ideal scope --> User.order(user.apologies.count: :desc)
 
 
     def self.from_omniauth(auth)
